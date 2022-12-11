@@ -342,11 +342,14 @@ def complete_task(infile, outfile):
             
             if len(res) % 100 == 0:
                 with open(f'{outfile}.txt', 'w') as f:
-                    f.write('\n'.join(res[-100:]))
+                    # f.write('\n' + '\n'.join(res[-100:]))
+                    f.write('\n'.join(res[::-1]))
         
         print(world)
+        # if len(res) % 100 != 0:
         with open(f'{outfile}.txt', 'w') as f:
-            f.write('\n'.join(res[-100:]))
+                # f.write('\n' + '\n'.join(res[-100:]))
+            f.write('\n'.join(res[::-1]))
 
     complete_task_(infile, outfile)
 
